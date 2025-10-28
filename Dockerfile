@@ -22,8 +22,9 @@ RUN composer install --optimize-autoloader
 # Copy the rest of the application
 COPY . .
 
-# Set Apache to serve from public directory
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+# Set Apache to serve from public directory and allow .htaccess
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
+    && sed -i 's|AllowOverride None|AllowOverride All|g' /etc/apache2/sites-available/000-default.conf
 
 # Ensure data directory exists and is writable
 RUN mkdir -p data && chown -R www-data:www-data /var/www/html/data
