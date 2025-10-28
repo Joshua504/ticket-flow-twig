@@ -1,0 +1,60 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<section class="login-page">
+    <div class="login__logo">
+        <img src="/assets/img/Blue Background.gif" alt="">
+        <h1>ZenDesk</h1>
+    </div>
+    <div class="login__forms">
+        <form action="/auth/signup" method="post" class="login-form">
+            <h1 class="form__title">create an account</h1>
+            {% if error %}
+            <div class="errorMessage">{{ error }}</div>
+            {% endif %}
+            <div class="form__container">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    class="input"
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    class="input"
+                    required
+                />
+                <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    class="input"
+                    required
+                />
+                <button type="submit" class="button">
+                    signup
+                </button>
+            </div>
+            <div class="switch_con">
+                <p>or</p> <a class="switch" href="/auth/login">login</a>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+setTimeout(function() {
+var messages = document.querySelectorAll('.errorMessage');
+messages.forEach(function(msg) {
+msg.classList.add('fade-out');
+});
+setTimeout(function() {
+        messages.forEach(function(msg) {
+            msg.style.display = 'none';
+        });
+    }, 1000);
+}, 4000);
+</script>
+{% endblock %}

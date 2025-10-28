@@ -1,0 +1,858 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ font-family: "Inter", sans-serif;
+ text-decoration: none;
+}
+
+body {
+ background: #f6f7f7;
+ color: #1e1e1e;
+ max-width: 1440px;
+ margin: 0 auto;
+}
+
+/* Nav */
+.nav {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1em 4em;
+ transition: 0.5s ease;
+}
+
+.nav .logo {
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ color: #3d98ec;
+}
+
+.nav .nav-list {
+ display: flex;
+ justify-content: center;
+ gap: 2em;
+ position: fixed;
+ width: 100%;
+ top: -105px;
+ left: 0;
+ background-color: #ffffff;
+ padding: 1em 4em;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ transition: 0, 5s ease;
+ z-index: 1;
+}
+
+.nav .nav-list-item {
+ color: #1e1e1e;
+ font-family: "BBH Sans Bartle", sans-serif;
+ text-decoration: none;
+ text-transform: capitalize;
+ transition: color 0.3s ease;
+ cursor: pointer;
+}
+
+.nav .nav-list-item:hover {
+ color: #3d98ec;
+}
+
+.nav .nav-list.active {
+ top: 70px;
+}
+
+.nav .links {
+ display: flex;
+ align-items: center;
+ gap: 2em;
+}
+
+.nav .links .hamburger {
+ cursor: pointer;
+}
+
+.hamburger .bars {
+ display: block;
+ width: 30px;
+ height: 5px;
+ background-color: #1e1e1e;
+ margin: 4px 0;
+ border-radius: 5px;
+ transition: 0.3s ease;
+}
+
+.nav .links .nav-login {
+ text-decoration: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ background-color: #3d98ec;
+ color: #ffffff;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ transition: all 0.3s ease;
+}
+
+.nav .links .hamburger:hover {
+ background-color: #2c7cd1;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+ background: #ffffff;
+ padding: 2rem;
+}
+
+.footer_con {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.footer .socials {
+ display: flex;
+ gap: 1rem;
+}
+
+.footer .socials img {
+ width: 24px;
+ height: 24px;
+}
+
+.footer .copy p {
+ text-align: center;
+ margin-top: 1rem;
+}
+
+/* Home */
+.header {
+ text-align: center;
+ padding: 4rem 2rem;
+ position: relative;
+ height: 100vh;
+ background-image: url(/assets/img/wave.svg);
+ background-position: bottom;
+ background-repeat: no-repeat;
+}
+
+.header_card {
+ position: relative;
+ height: 400px;
+ width: 1200px;
+ border-radius: 10px;
+ margin: 0 auto 2em;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 1;
+}
+
+.header_card h1 {
+ font-size: 60px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ margin-bottom: 1rem;
+ color: #ffffff;
+}
+.header_card img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius: 10px;
+ position: absolute;
+ left: 0;
+ z-index: -1;
+}
+
+.header_text p {
+ font-size: 16px;
+ text-align: center;
+ margin-bottom: 3rem;
+}
+
+.cta_section {
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+}
+
+.cta {
+ display: inline-block;
+ width: 300px;
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #3d98ec;
+ color: #ffffff;
+ border: none;
+ font-family: inherit;
+ font-size: 16px;
+ font-weight: 600;
+ text-transform: uppercase;
+ transition: all 0.5s ease;
+}
+
+.cta:nth-child(1) {
+ background-color: #ffffff;
+ color: #1e1e1e;
+}
+
+.cta:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.block,
+.circle {
+ position: absolute;
+ background: #3d98ec;
+ z-index: -1;
+}
+
+.block {
+ width: 200px;
+ height: 200px;
+ top: 00px;
+ right: 20px;
+ border-radius: 10px;
+}
+
+.circle {
+ width: 200px;
+ height: 200px;
+ border-radius: 50%;
+ top: 0px;
+ left: 20px;
+}
+
+.main {
+ padding: 4rem 2rem;
+}
+
+.feature h2 {
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ text-align: center;
+ margin-bottom: 1rem;
+}
+
+.feature p {
+ font-size: 16px;
+ text-align: center;
+ margin-bottom: 2rem;
+}
+
+.feature_card_section {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 2rem;
+ margin-bottom: 4rem;
+}
+
+.feature_card {
+ background: #ffffff;
+ padding: 2rem;
+ border-radius: 5px;
+ text-align: center;
+}
+
+.card_icon {
+ margin-bottom: 1rem;
+}
+
+.card_icon img {
+ width: 50px;
+ height: 50px;
+}
+
+.feature_card h3 {
+ font-size: 18px;
+ margin-bottom: 1rem;
+}
+
+.testimonial h2 {
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ text-align: center;
+ margin-bottom: 1rem;
+}
+
+.testimonial p {
+ font-size: 16px;
+ text-align: center;
+ margin-bottom: 2rem;
+}
+
+.testimonial_section {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 2rem;
+}
+
+.testimonial_card {
+ background: #ffffff;
+ padding: 2rem;
+ border-radius: 5px;
+}
+
+.test_text {
+ margin-bottom: 1rem;
+}
+
+.user_info {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}
+
+.avatar img {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+}
+
+.user_info h3 {
+ font-size: 16px;
+ margin: 0;
+}
+
+.user_info p {
+ font-size: 14px;
+ margin: 0;
+ color: #666;
+}
+
+/* Login */
+.login-page {
+ display: flex;
+ padding: 16px;
+}
+
+.login__logo {
+ position: relative;
+ width: 50%;
+ height: 90vh;
+ border-radius: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.login__logo img {
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+ border-radius: 20px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: -1;
+}
+
+.login__logo h1 {
+ text-align: center;
+ margin-bottom: 1rem;
+ color: #fff;
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+}
+
+.login__forms {
+ width: 50%;
+ height: 90vh;
+ padding: 0 3rem;
+ display: grid;
+ place-content: center;
+}
+
+.login-form {
+ width: 100%;
+}
+
+.login-form h1 {
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ text-align: center;
+ margin-bottom: 1rem;
+}
+
+.form__container {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-bottom: 1rem;
+ width: 100%;
+}
+
+.input {
+ padding: 0.5rem;
+ border: none;
+ background: #ffffff;
+ border-radius: 5px;
+ font-size: 16px;
+ height: 60px;
+ width: 500px;
+}
+
+.button {
+ padding: 15px 32px;
+ border-radius: 5px;
+ background-color: #3d98ec;
+ color: #ffffff;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.button:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.switch_con {
+ text-align: center;
+}
+
+.switch_con p {
+ display: inline;
+ margin: 0 0.5rem;
+}
+
+.switch {
+ color: #3d98ec;
+ text-decoration: none;
+}
+
+/* Dashboard */
+.container {
+ padding: 32px;
+ min-height: 100vh;
+}
+.container .dash-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #ffffff;
+ padding-bottom: 16px;
+ margin-bottom: 32px;
+}
+
+.container .dash-header h1 {
+ margin-bottom: 2rem;
+ font-size: 24px;
+ font-family: "BBH Sans Bartle", sans-serif;
+}
+
+.container .dash-header .logoutBtn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #f44336;
+ color: #ffffff;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.container .header .logoutBtn:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stats {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 1.5rem;
+ margin-bottom: 2rem;
+}
+
+.statCard {
+ background: #ffffff;
+ padding: 2rem;
+ border-radius: 10px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ text-align: center;
+}
+
+.statCard h3 {
+ font-size: 18px;
+ color: #1e1e1e;
+ margin-bottom: 1rem;
+ font-weight: 600;
+}
+
+.statNumber {
+ font-size: 60px;
+ font-family: "BBH Sans Bartle", sans-serif;
+ color: #3d98ec;
+ margin: 0;
+ font-weight: bold;
+}
+.actions {
+ display: flex;
+ justify-content: center;
+}
+
+.actions .ticketLink {
+ display: inline-block;
+ padding: 16px 32px;
+ border-radius: 5px;
+ background-color: #3d98ec;
+ color: #ffffff;
+ text-decoration: none;
+ font-size: 18px;
+ font-weight: 600;
+ text-transform: uppercase;
+ transition: all 0.5s ease;
+}
+
+.actions .ticketLink:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ticket Management */
+.content {
+ padding: 2rem;
+}
+
+.ticket-header {
+ margin-bottom: 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #ffffff;
+ padding-bottom: 16px;
+ margin-bottom: 32px;
+}
+
+.ticket-header .logoutBtn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #f44336;
+ color: #ffffff;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.t-actions {
+ display: flex;
+ justify-content: end;
+ padding: 0 0 1rem;
+}
+
+.t-actions .createBtn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #3d98ec;
+ color: #fff;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ transition: all 0.5s ease;
+}
+
+.t-actions .createBtn:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+ background: #ffffff;
+ padding: 2rem;
+ border-radius: 5px;
+ margin-bottom: 2rem;
+}
+
+.form h2 {
+ font-size: 24px;
+ margin-bottom: 1rem;
+}
+
+.formGroup {
+ margin-bottom: 1rem;
+}
+
+.formGroup label {
+ display: block;
+ margin-bottom: 0.5rem;
+ font-weight: 600;
+}
+
+.formRow {
+ display: flex;
+ gap: 1rem;
+}
+
+.formRow .formGroup {
+ flex: 1;
+}
+
+textarea {
+ width: 100%;
+ padding: 0.5rem;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ font-family: inherit;
+ font-size: 16px;
+ resize: vertical;
+}
+
+select {
+ width: 100%;
+ padding: 0.5rem;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ font-size: 16px;
+}
+
+.formActions {
+ display: flex;
+ gap: 1rem;
+ margin-top: 1rem;
+}
+
+.cancelBtn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #ccc;
+ color: #1e1e1e;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.cancelBtn:hover {
+ background-color: #aaa;
+}
+
+.submitBtn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: #4caf50;
+ color: #ffffff;
+ border: none;
+ font-family: inherit;
+ font-size: 14px;
+ font-weight: 600;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.submitBtn:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticketsGrid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 1rem;
+}
+
+.ticketCard {
+ background: #ffffff;
+ padding: 1rem;
+ border-radius: 5px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticketHeader {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 1rem;
+}
+
+.ticketTitle {
+ font-size: 18px;
+ font-weight: 600;
+}
+
+.ticketTags {
+ display: flex;
+ gap: 0.5rem;
+}
+
+.statusTag,
+.priorityTag {
+ padding: 0.25rem 0.5rem;
+ border-radius: 3px;
+ color: white;
+ font-size: 12px;
+ font-weight: 600;
+}
+
+.ticketDescription {
+ margin-bottom: 1rem;
+ font-size: 14px;
+}
+
+.ticketMeta {
+ font-size: 12px;
+ color: #666;
+ margin-bottom: 1rem;
+}
+
+.ticketActions {
+ display: flex;
+ gap: 0.5rem;
+}
+
+.editBtn,
+.deleteBtn {
+ padding: 0.5rem 1rem;
+ border: none;
+ border-radius: 3px;
+ font-size: 12px;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.5s ease;
+ text-decoration: none;
+ display: inline-block;
+ text-align: center;
+}
+
+.editBtn {
+ background-color: #ff9800;
+ color: white;
+}
+
+.editBtn:hover {
+ background-color: #e68900;
+}
+
+.deleteBtn {
+ background-color: #f44336;
+ color: white;
+}
+
+.deleteBtn:hover {
+ background-color: #d32f2f;
+}
+
+.successMessage {
+ background-color: #d4edda;
+ color: #155724;
+ padding: 1rem;
+ border: 1px solid #c3e6cb;
+ border-radius: 5px;
+ margin-bottom: 2rem;
+ font-weight: 600;
+ transition: opacity 1s ease;
+}
+
+.errorMessage {
+ background-color: #f8d7da;
+ color: #721c24;
+ padding: 1rem;
+ border: 1px solid #f5c6cb;
+ border-radius: 5px;
+ margin-bottom: 1rem;
+ font-weight: 600;
+ transition: opacity 1s ease;
+}
+
+.fade-out {
+ opacity: 0;
+}
+
+@media (max-width: 768px) {
+ .nav {
+  padding: 16px;
+ }
+
+ .nav .links {
+  gap: 0.5rem;
+ }
+
+ .container {
+  padding: 32px 16px;
+ }
+
+ .dash-header,
+ .ticket-header {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .content {
+  padding: 0px;
+ }
+
+ .t-actions {
+  margin-bottom: 2rem;
+ }
+
+ .form {
+  padding: 1rem;
+ }
+
+ .login-page {
+  flex-direction: column;
+ }
+
+ .login__logo {
+  width: 100%;
+  height: 50vh;
+ }
+
+ .login__forms {
+  width: 100%;
+  padding: 0;
+  height: fit-content;
+ }
+
+ .input {
+  width: 100%;
+ }
+
+ .button {
+  width: 100%;
+ }
+}
+
+@media (768px < width <= 1024px) {
+ .login-page {
+  flex-direction: column;
+ }
+
+ .login__logo {
+  width: 100%;
+  height: 50vh;
+ }
+
+ .login__forms {
+  width: 100%;
+  padding: 0;
+  height: fit-content;
+ }
+
+ .input {
+  width: 100%;
+ }
+
+ .button {
+  width: 100%;
+ }
+}

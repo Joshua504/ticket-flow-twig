@@ -1,0 +1,118 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	<header class="header">
+		<div class="header_card">
+			<h1>ZenDesk</h1>
+			<img src="/assets/img/Blue Background.gif" alt=""/>
+		</div>
+		<div class="header_text">
+			<p>
+				Effortlessly manage, track, and resolve tickets with Ticket Flow—your
+				            all-in-one solution for streamlined support, seamless collaboration, and
+				            boosted productivity. Simplify your workflow and keep your team and
+				            customers happy!
+			</p>
+			<section class="cta_section">
+				<a class="cta" href="/auth/login">Get started</a>
+				<a class="cta" href="/auth/login">Login</a>
+			</section>
+		</div>
+		<div class="block"></div>
+		<div class="circle"></div>
+	</header>
+
+	<main class="main">
+		<div class="feature">
+			<h2>Powerful features, Effortless workflow</h2>
+			<p>Discover the tools that will revolutionize your support process.</p>
+			<section class="feature_card_section">
+				<div class="feature_card">
+					<div class="card_icon">
+						<img src="/assets/icons/plus.svg" alt=""/>
+					</div>
+					<h3>Effortless Ticket Creation</h3>
+					<p>
+						Quickly create and assign tickets with our streamlined interface,
+						                    ensuring no customer query gets lost.
+					</p>
+				</div>
+
+				<div class="feature_card">
+					<div class="card_icon">
+						<img src="/assets/icons/robot.svg" alt=""/>
+					</div>
+					<h3>smart priotization</h3>
+					<p>
+						automate ticket routing and priotization based on custom rules to focus
+						                    on what matters most
+					</p>
+				</div>
+
+				<div class="feature_card">
+					<div class="card_icon">
+						<img src="/assets/icons/collaboration.svg" alt=""/>
+					</div>
+					<h3>Collaborative workspace</h3>
+					<p>
+						Easily collaborate with your team in real-time, ensuring that everyone
+						                    is on the same page and working towards the same goals.
+					</p>
+				</div>
+
+				<div class="feature_card">
+					<div class="card_icon">
+						<img src="/assets/icons/analytics.svg" alt=""/>
+					</div>
+					<h3>Analytics and Reporting</h3>
+					<p>
+						Gain valuable insights into your teams performance and customer
+						                    satisfaction with our comprehensive reporting tools
+					</p>
+				</div>
+			</section>
+		</div>
+
+		<div class="testimonial">
+			<h2>Loved by Teams Worldwide</h2>
+			<p>Don't just take our word for it. Here's what our users are saying.</p>
+			<section class="testimonial_section">
+				<div class="testimonial_card">
+					<p class="test_text">
+						"I've been using this tool for a few months now, and it has made a huge
+						                    difference in how we handle customer support. The intuitive interface
+						                    and powerful features have streamlined our workflow, allowing us to
+						                    respond to tickets faster. "
+					</p>
+					<div class="user_info">
+						<div class="avatar">
+							<img src="/assets/img/av-1.png" alt=""/>
+						</div>
+						<div>
+							<h3>John Doe</h3>
+							<p>CEO, ABC Corp</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="testimonial_card">
+					<p class="test_text">
+						"After several months of using this tool, I’ve noticed a remarkable
+						                    improvement in our customer support process. Its user-friendly design
+						                    and robust features have truly optimized our workflow, enabling us to
+						                    address tickets swiftly and with greater accuracy."
+					</p>
+					<div class="user_info">
+						<div class="avatar">
+							<img src="/assets/img/av-2.png" alt=""/>
+						</div>
+						<div>
+							<h3>0x anon</h3>
+							<p>CEO, ABC Corp</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+{% endblock %}

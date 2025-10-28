@@ -1,0 +1,113 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="container">
+    <header class="ticket-header">
+        <h1>Ticket Management</h1>
+        <a href="/auth/logout" class="logoutBtn">Logout</a>
+    </header>
+
+    <div class="content">
+        {% if not show_form %}
+        <div class="t-actions">
+            <a href="/tickets?create=1" class="createBtn">Create New Ticket</a>
+        </div>
+        {% endif %}
+
+        {% if show_form %}
+        <form action="/tickets" method="post" class="form">
+        <h2>{% if edit_ticket %}Edit Ticket{% else %}Create New Ticket{% endif %}</h2>
+        {% if error %}
+        <div class="errorMessage">{{ error }}</div>
+        {% endif %}
+        {% if edit_ticket %}
+        <input type="hidden" name="edit_id" value="{{ edit_ticket.id }}">
+        {% endif %}
+        <div class="formGroup">
+                <label for="title">Title *</label>
+            <input id="title" type="text" name="title" value="{{ edit_ticket.title|default('') }}" required />
+        </div>
+
+        <div class="formGroup">
+                <label for="description">Description</label>
+            <textarea id="description" rows="4" name="description">{{ edit_ticket.description|default('') }}</textarea>
+        </div>
+
+        <div class="formRow">
+        <div class="formGroup">
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority">
+            <option value="low" {% if edit_ticket.priority == 'low' %}selected{% endif %}>Low</option>
+                <option value="medium" {% if edit_ticket.priority|default('medium') == 'medium' %}selected{% endif %}>Medium</option>
+                        <option value="high" {% if edit_ticket.priority == 'high' %}selected{% endif %}>High</option>
+            </select>
+        </div>
+
+        <div class="formGroup">
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+        <option value="" disabled>Select Status</option>
+            <option value="open" {% if edit_ticket.status|default('open') == 'open' %}selected{% endif %}>Open</option>
+                <option value="in_progress" {% if edit_ticket.status == 'in_progress' %}selected{% endif %}>In Progress</option>
+                    <option value="closed" {% if edit_ticket.status == 'closed' %}selected{% endif %}>Closed</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="formActions">
+                <button type="submit" class="submitBtn">{% if edit_ticket %}Update Ticket{% else %}Create Ticket{% endif %}</button>
+                <a href="/tickets" class="cancelBtn">Cancel</a>
+            </div>
+        </form>
+        {% endif %}
+
+        {% if success %}
+        <div class="successMessage">{{ success }}</div>
+        {% endif %}
+
+        <div class="ticketsGrid">
+            {% for ticket in tickets %}
+            <div class="ticketCard">
+                <div class="ticketHeader">
+                    <h3 class="ticketTitle">{{ ticket.title }}</h3>
+                    <div class="ticketTags">
+                        <span class="statusTag" style="background-color: {{ ticket.status_color }}">{{ ticket.status }}</span>
+                        <span class="priorityTag" style="background-color: {{ ticket.priority_color }}">{{ ticket.priority }}</span>
+                    </div>
+                </div>
+
+                <p class="ticketDescription">{{ ticket.description }}</p>
+
+                <div class="ticketMeta">
+                    <span>Created: {{ ticket.created_at|date('m/d/Y') }}</span>
+                    {% if ticket.updated_at != ticket.created_at %}
+                    <span>Updated: {{ ticket.updated_at|date('m/d/Y') }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="ticketActions">
+                <a href="/tickets?edit={{ ticket.id }}" class="editBtn">Edit</a>
+                <form method="post" action="/tickets" style="display:inline;">
+                        <input type="hidden" name="delete_id" value="{{ ticket.id }}">
+                        <button type="submit" class="deleteBtn" onclick="return confirm('Are you sure you want to delete this ticket?');">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+setTimeout(function() {
+    var messages = document.querySelectorAll('.successMessage, .errorMessage');
+    messages.forEach(function(msg) {
+        msg.classList.add('fade-out');
+    });
+    setTimeout(function() {
+        messages.forEach(function(msg) {
+            msg.style.display = 'none';
+        });
+    }, 1000);
+}, 4000);
+</script>
+{% endblock %}

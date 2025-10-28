@@ -1,0 +1,13 @@
+{
+    "name": "ticket-flow-twig",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Ticket flow application using Twig templates",
+    "scripts": {
+        "serve": "php -S localhost:8000 -t public",
+        "build-css": "sass src/styles/main.scss public/styles/main.css --watch"
+    },
+    "devDependencies": {
+        "sass": "^1.83.0"
+    }
+}

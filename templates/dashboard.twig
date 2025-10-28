@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="container">
+    <header class="dash-header">
+        <h1>Dashboard</h1>
+        <a href="/auth/logout" class="logoutBtn">Logout</a>
+    </header>
+
+    <div class="stats">
+        <div class="statCard">
+            <h3>Total Tickets</h3>
+            <p class="statNumber">{{ stats.total }}</p>
+        </div>
+        <div class="statCard">
+            <h3>Open Tickets</h3>
+            <p class="statNumber">{{ stats.open }}</p>
+        </div>
+        <div class="statCard">
+            <h3>Resolved Tickets</h3>
+            <p class="statNumber">{{ stats.resolved }}</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <a href="/tickets" class="ticketLink">Go to Ticket Management</a>
+    </div>
+</div>
+{% endblock %}
